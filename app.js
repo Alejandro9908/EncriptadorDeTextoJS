@@ -12,6 +12,8 @@ let salida = document.querySelector('#salida');
 let btn_encriptar = document.querySelector('#btn_encriptar');
 let btn_desencriptar = document.querySelector('#btn_desencriptar');
 let btn_copiar = document.querySelector('#btn_copiar');
+let btn_borrar = document.querySelector('#btn_borrar');
+let txt_default = document.querySelector('#txt_default');
 
 btn_copiar.addEventListener('click', () => {
     salida.select();
@@ -19,13 +21,22 @@ btn_copiar.addEventListener('click', () => {
     alert('Texto copiado');
 });
 
+btn_borrar.addEventListener('click', () => {
+    entrada.value = '';
+    salida.value = '';
+    banderaTextoSalida();
+});
+
 btn_encriptar.addEventListener('click', () => {
     encriptar(entrada.value);
+    banderaTextoSalida();
 });
 
 btn_desencriptar.addEventListener('click', () => {
     desencriptar(entrada.value);
+    banderaTextoSalida();
 });
+
 
 function encriptar(cadena){
     cadena = cadena.split('');
@@ -70,4 +81,24 @@ function desencriptar(cadena){
     res = res.replaceAll('ober', 'o');
     res = res.replaceAll('ufat', 'u')
     salida.value = res;
+}
+
+function banderaTextoSalida(){
+    if(salida.value == ""){
+        txt_default.classList.remove('hidden');
+    }else{
+        txt_default.classList.add('hidden');
+    }
+}
+
+function validarCaracter(e) {
+    let caracter = e.keyCode;
+
+    if (caracter == 8) return true;//tecla borrar
+    
+    regex = /[a-z]/;
+
+    caracter_final = String.fromCharCode(caracter);
+
+    return regex.test(caracter_final);
 }

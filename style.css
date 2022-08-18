@@ -31,11 +31,11 @@ body{
 }
 
 .logo .title {
-    color: #052051;
+    color: #072B61;
 }
 
 .main{
-    margin-top: 70px;
+    margin-top: 100px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -49,6 +49,16 @@ body{
     background-color: white;
     border-radius: 20px;
     overflow: hidden;
+}
+
+.block{
+    width: 100%;
+    height: 100%;
+}
+
+.container-area{
+    width: 100%;
+    background-color: #052051;
 }
 
 .container div:first-child{
@@ -118,25 +128,60 @@ body{
 .btn-copy{
     border: none;
     font-size: 14px;
+    font-weight: 700;
+    padding: 5px 10px;
     color: #0A3871;
     cursor: pointer;
     border-radius:20px;
     margin-left: 15px;
-    width: 40px;
-    height: 40px;
     background-color: #E9ECF8;
-}
-
-.btn-copy i{
-    font-size: 22px;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
 }
 
 .btn-copy:hover{
-    width: 42px;
-    height: 42px;
     transition: 0.2s;
     background-color: #d7dae7;
 }
+
+.block{
+    position: relative;
+}
+
+.message{
+    position: absolute;
+    bottom: 15px;
+    left: 10px;
+    color: grey;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.txt-default{
+    position: absolute;
+    top: 25%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 300px;
+    color: gray;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.txt-default span{
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.hidden{
+    display: none;
+}
+
+
 
 @media (max-width: 772px) {
     .container{
@@ -162,12 +207,24 @@ body{
         margin-top: 30px;
     }
 
+    .txt-default{
+        top: 30%;
+        font-size: 14px;
+    }
+    
+    .txt-default span{
+        font-size: 11px;
+    }
+
+    .txt-default svg{
+        display: none;
+    }
+    .message{
+        font-size: 11px;
+    }
+
     .btn-copy{
-        
-        margin-left: 10px;
-        margin-bottom: 10px;
-        padding-bottom: 10px;
-        padding-top: 10px;
+        padding: 3px 8px;
     }
 }
 
