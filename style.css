@@ -1,0 +1,174 @@
+*,*::after,*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 0px;
+    background-color: #F3F5FC;
+}
+
+.header{
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 10px 50px;
+    z-index: 100;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.logo{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.logo .title {
+    color: #052051;
+}
+
+.main{
+    margin-top: 70px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container{
+    display: flex;
+    width: 90%;
+    height: 450px;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.container div:first-child{
+    border-right: 1px solid #CED4DA;
+}
+
+.container div{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 50%;
+    height: 100%;
+}
+
+.txtarea{
+    border: none;
+    width: 100%;
+    height: 400px;
+    font-size: 20px;
+    padding: 20px;
+    color: #052051;
+    resize: none;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.txtarea:focus{
+    outline: none !important;
+}
+
+.control-panel{
+    width: 90%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+.btn{
+    width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.btn-primary{
+    background-color: #0A3871;
+    border: none;
+    color: white;
+    
+}
+
+.btn-alt-primary{
+    border: 2px solid #0A3871;
+    color: #0A3871;
+    background: none;
+}
+
+.btn-primary:hover,
+.btn-alt-primary:hover{
+    width: 155px;
+    height: 43px;
+    transition: 0.2s;
+}
+
+.btn-copy{
+    border: none;
+    font-size: 14px;
+    color: #0A3871;
+    cursor: pointer;
+    border-radius:20px;
+    margin-left: 15px;
+    width: 40px;
+    height: 40px;
+    background-color: #E9ECF8;
+}
+
+.btn-copy i{
+    font-size: 22px;
+}
+
+.btn-copy:hover{
+    width: 42px;
+    height: 42px;
+    transition: 0.2s;
+    background-color: #d7dae7;
+}
+
+@media (max-width: 772px) {
+    .container{
+        height: 70vh;
+        flex-direction: column;
+    }
+
+    .container div:first-child{
+        border: none;
+        border-bottom: 1px solid #CED4DA;
+    }
+    
+    .container div{
+        width: 100%;
+        height: 50%;
+    }
+
+    .txtarea{
+        font-size: 16px;
+    }
+
+    .control-panel{
+        margin-top: 30px;
+    }
+
+    .btn-copy{
+        
+        margin-left: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+    }
+}
+
+
